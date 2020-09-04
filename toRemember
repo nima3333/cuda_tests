@@ -1,0 +1,2 @@
+nvcc -ccbin "I:\Softwares\VStudio\VC\Tools\MSVC\14.27.29110\bin\HostX86\x64" -x cu   -I./ -I../../common/inc -I./ -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\/include" -I../../common/inc -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\include" .\first_test.cu
+first_test.cu
