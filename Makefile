@@ -1,13 +1,14 @@
-.PHONY: clean
+src = $(wildcard *.cu)
+obj = $(src:.cu=)
 
-SRCS = $(wildcard *.cu)
+print:
+	echo $(obj) > print
 
-PROGS = $(patsubst %.cu,%,$(SRCS))
+$(obj): $(src)
+	nvcc -o $@ $(addsuffix .cu,$@)
 
-all: $(PROGS)
+.PHONY: all clean
+clean:
+	rm -f $(obj)
 
-%: %.c
-        nvcc -o $@ $<
-
-clean: 
-        rm -f $(PROGS)
+all: $(obj)
